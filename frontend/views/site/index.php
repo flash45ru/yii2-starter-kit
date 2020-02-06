@@ -13,6 +13,7 @@ $this->title = Yii::$app->name;
     ]) ?>
 
     <div class="jumbotron">
+        <p><a class="btn btn-default" href="/main/index">Обявления &raquo;</a></p>
         <h1>Congratulations!</h1>
 
         <p class="lead">You have successfully created your Yii-powered application.</p>
@@ -59,6 +60,7 @@ $this->title = Yii::$app->name;
 
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
+
         </div>
 
     </div>
