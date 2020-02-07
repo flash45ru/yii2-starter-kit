@@ -10,6 +10,9 @@ $config = [
             'shouldBeActivated' => false,
             'enableLoginByPass' => false,
         ],
+        'file' => [
+            'class' => backend\modules\file\Module::class,
+        ],
     ],
     'components' => [
         'authClientCollection' => [

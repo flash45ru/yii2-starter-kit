@@ -1,68 +1,72 @@
 <?php
 namespace frontend\services;
 
-use app\models\Characteristic;
 use frontend\models\forms\CompositeModelForm;
 use frontend\repository\FormRepository;
 
 class FormService
 {
-    protected $formRepository;
+    protected $form_repository;
 
-    public function __construct(FormRepository $formRepository)
+    public function __construct(FormRepository $form_repository)
     {
-        $this->formRepository = $formRepository;
+        $this->form_repository = $form_repository;
     }
 
     public function searchModel()
     {
-        return $this->formRepository->searchModel();
+        return $this->form_repository->searchModel();
     }
     public function dataProvider($queryParams)
     {
-        return $this->formRepository->dataProvider($queryParams);
+        return $this->form_repository->dataProvider($queryParams);
+    }
+
+    public function widgetCarouselItem()
+    {
+        return $this->form_repository->widgetCarouselItem();
     }
 
     public function create(CompositeModelForm $form)
     {
-        $this->formRepository->create($form);
+        $this->form_repository->create($form);
 
     }
 
     public function update(CompositeModelForm $form)
     {
-        return $this->formRepository->update($form);
+        return $this->form_repository->update($form);
 
     }
 
     public function view(CompositeModelForm $form)
     {
-        return $this->formRepository->view($form);
+        return $this->form_repository->view($form);
 
     }
 
     public function delete()
     {
-        return $this->formRepository->delete();
+        return $this->form_repository->delete();
     }
 
     public function getAdvent($id)
     {
-        $advent = $this->formRepository->getAdventById($id);
+        $advent = $this->form_repository->getAdventById($id);
 
         return $advent;
     }
 
     public function getCharacteristic($id)
     {
-        $characteristic = $this->formRepository->getCharacteristicById($id);
+        $characteristic = $this->form_repository->getCharacteristicById($id);
 
         return $characteristic;
     }
 
     public function getOptions($id)
     {
-        $options = $this->formRepository->getOptionsById($id);
+        $options = $this->form_repository->getOptionsById($id);
 
         return $options;
     }

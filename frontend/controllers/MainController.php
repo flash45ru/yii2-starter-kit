@@ -21,13 +21,13 @@ class MainController extends Controller
 
     public function actionIndex()
     {
-        $queryParams = Yii::$app->request->queryParams;
-        $searchModel = $this->service->searchModel();
-        $dataProvider = $this->service->dataProvider($queryParams);
+        $query_params = Yii::$app->request->queryParams;
+        $search_model = $this->service->searchModel();
+        $data_provider = $this->service->dataProvider($query_params);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'searchModel' => $search_model,
+            'dataProvider' => $data_provider,
         ]);
 
     }
@@ -35,8 +35,10 @@ class MainController extends Controller
     public function actionCreate()
     {
         $form = new CompositeModelForm([
-            'advent', 'characteristic', 'options',
+            'advent', 'characteristic', 'options', 'photo'
         ]);
+
+        $widget_carousel_item = $this->service->widgetCarouselItem();
 
         if ($form->load(\Yii::$app->request->post()) && $form->validate()) {
             try {
@@ -53,6 +55,7 @@ class MainController extends Controller
             'advent' => $form->advent,
             'characteristic' => $form->characteristic,
             'options' => $form->options,
+            'file' => $widget_carousel_item,
         ]);
     }
 

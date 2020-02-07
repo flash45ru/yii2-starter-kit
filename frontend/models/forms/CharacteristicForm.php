@@ -30,7 +30,6 @@ class CharacteristicForm extends Model
             [['year', 'mileage', 'model', 'carcase'], 'required'],
             [['car_id', 'year', 'mileage'], 'integer'],
             [['model', 'carcase'], 'string', 'max' => 255],
-            //[['car_id'], 'exist', 'skipOnError' => true, 'targetClass' => Car::className(), 'targetAttribute' => ['car_id' => 'id']],
         ];
     }
 

@@ -37,6 +37,15 @@ use yii\widgets\ActiveForm;
     <?= $form->field($advent, 'price')->textInput() ?>
     <?= $form->field($advent, 'contacts')->textInput() ?>
 
+    <?= $form->field($file, 'image')->widget(
+        \trntv\filekit\widget\Upload::class,
+        [
+            'url' => ['/file/storage/upload'],
+            'multiple' => true,
+            'maxNumberOfFiles' => 5,
+        ]
+    ) ?>
+
     <h2>Characteristics(характеритика)</h2>
     <?= $form->field($characteristic, 'model')->textInput() ?>
     <?= $form->field($characteristic, 'year')->textInput() ?>

@@ -29,7 +29,6 @@ class OptionsForm extends Model
     {
         return [
             [['car_id', 'conditioner', 'airbags', 'multimedia', 'cruise_control'], 'integer'],
-            //[['car_id'], 'exist', 'skipOnError' => true, 'targetClass' => Car::className(), 'targetAttribute' => ['car_id' => 'id']],
         ];
     }
 

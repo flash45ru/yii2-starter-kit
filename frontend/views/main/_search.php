@@ -22,10 +22,10 @@ use yii\widgets\ActiveForm;
         <div class="col-lg-2"><?= $form->field($model, 'price') ?></div>
     </div>
     <div class="row">
-        <div class="col-lg-2"><?= $form->field($model, 'conditioner') ?></div>
-        <div class="col-lg-2"><?= $form->field($model, 'airbags') ?></div>
-        <div class="col-lg-2"><?= $form->field($model, 'multimedia') ?></div>
-        <div class="col-lg-2"><?= $form->field($model, 'cruise_control') ?></div>
+        <div class="col-lg-2"><?= $form->field($model, 'conditioner')->dropDownList(['1' => 'Есть', '0' => 'Нет']) ?></div>
+        <div class="col-lg-2"><?= $form->field($model, 'airbags')->dropDownList(['1' => 'Есть', '0' => 'Нет']) ?></div>
+        <div class="col-lg-2"><?= $form->field($model, 'multimedia')->dropDownList(['1' => 'Есть', '0' => 'Нет']) ?></div>
+        <div class="col-lg-2"><?= $form->field($model, 'cruise_control')->dropDownList(['1' => 'Есть', '0' => 'Нет']) ?></div>
     </div>
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

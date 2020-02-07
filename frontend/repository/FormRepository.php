@@ -6,8 +6,12 @@ use app\models\Advent;
 use app\models\Car;
 use app\models\Characteristic;
 use app\models\Options;
+use app\models\Photo;
+use common\models\WidgetCarousel;
+use common\models\WidgetCarouselItem;
 use frontend\models\search\Search;
 use yii\base\ErrorException;
+use yii\web\HttpException;
 
 class FormRepository
 {
@@ -18,17 +22,24 @@ class FormRepository
 
     public function searchModel()
     {
-        $searchModel = new Search();
+        $search_model = new Search();
 
-        return $searchModel;
+        return $search_model;
     }
 
-    public function dataProvider($queryParams)
+    public function dataProvider($query_params)
     {
-        $searchModel = self::searchModel();
-        $dataProvider = $searchModel->search($queryParams);
+        $search_model = self::searchModel();
+        $data_provider = $search_model->search($query_params);
 
-        return $dataProvider;
+        return $data_provider;
+    }
+
+    public function widgetCarouselItem()
+    {
+        $widget_carousel_item = new WidgetCarouselItem();
+
+        return $widget_carousel_item;
     }
 
     public function create($form)
@@ -37,9 +48,15 @@ class FormRepository
         $car_model = new Car();
         $characteristic_model = new Characteristic($form->characteristic->attributes);
         $options_model = new Options($form->options->attributes);
+        $photo_model = new Photo($form->options->attributes);
 
         $transaction = \Yii::$app->db->beginTransaction();
         if ($advent_model->save(false)) {
+
+            $photo_model->advent_id = $advent_model->id;
+            if (!$photo_model->save()) {
+                throw new ErrorException('Произошла ошибка при сохранении данных в "Photo"');
+            }
 
             $car_model->advent_id = $advent_model->id;
             if (!$car_model->save()) {

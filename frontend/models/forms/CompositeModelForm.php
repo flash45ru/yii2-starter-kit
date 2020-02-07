@@ -5,13 +5,14 @@ namespace frontend\models\forms;
 class CompositeModelForm extends CompositeModelFormMain
 {
     private $isNewRecord = true;
-    private $init_forms = [
+    private $init_forms = array(
         'advent' => AdventForm::class,
         'characteristic' => CharacteristicForm::class,
         'options' => OptionsForm::class,
-    ];
+        'photo' => PhotoForm::class,
+    );
     private $internal_forms = [
-        'advent', 'characteristic', 'options'
+        'advent', 'characteristic', 'options', 'photo'
     ];
     private $new_forms = [];
 
