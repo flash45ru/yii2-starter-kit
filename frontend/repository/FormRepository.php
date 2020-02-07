@@ -6,11 +6,8 @@ use app\models\Advent;
 use app\models\Car;
 use app\models\Characteristic;
 use app\models\Options;
-
-use frontend\models\search\AdventSearch;
-use Yii;
+use frontend\models\search\Search;
 use yii\base\ErrorException;
-use yii\data\ActiveDataProvider;
 
 class FormRepository
 {
@@ -18,23 +15,20 @@ class FormRepository
     private $_characteristic_model;
     private $_options_model;
 
-    public function index($queryParams)
+
+    public function searchModel()
     {
-//        $query1 = Advent::find()
-//            ->joinWith(['car' => function ($model) {
-//                $model->joinWith(['characteristics', 'options']);
-//            }]);
+        $searchModel = new Search();
 
-//        $dataProvider = new ActiveDataProvider([
-//            'query' => $query,
-//            'pagination' => [
-//                'pageSize' => 10,
-//            ],
-//        ]);
-        $searchModel = new AdventSearch();
+        return $searchModel;
+    }
+
+    public function dataProvider($queryParams)
+    {
+        $searchModel = self::searchModel();
         $dataProvider = $searchModel->search($queryParams);
-        return $dataProvider;
 
+        return $dataProvider;
     }
 
     public function create($form)

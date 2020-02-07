@@ -13,11 +13,30 @@ use Yii;
  * @property string $price
  * @property string $contacts
  *
+ * @property Characteristic[] $model
+ * @property Characteristic[] $year
+ * @property Characteristic[] $carcase
+ * @property Characteristic[] $mileage
+ *
+ * @property Options[] $conditioner
+ * @property Options[] $airbags
+ * @property Options[] $multimedia
+ * @property Options[] $cruise_control
+ *
  * @property Car[] $cars
  * @property Photo[] $photos
  */
 class Advent extends \yii\db\ActiveRecord
 {
+    public $model;
+    public $year;
+    public $carcase;
+    public $mileage;
+    public $conditioner;
+    public $airbags;
+    public $multimedia;
+    public $cruise_control;
+
     /**
      * {@inheritdoc}
      */
@@ -36,6 +55,8 @@ class Advent extends \yii\db\ActiveRecord
             [['description'], 'string'],
             [['price'], 'number'],
             [['title', 'contacts'], 'string', 'max' => 255],
+            [['year', 'mileage', 'conditioner', 'airbags', 'multimedia', 'cruise_control'], 'integer'],
+            [['model', 'carcase'], 'safe'],
         ];
     }
 
@@ -53,29 +74,12 @@ class Advent extends \yii\db\ActiveRecord
         ];
     }
 
-    public function afterSave($insert, $changedAttributes)
-    {
-        parent::afterSave($insert, $changedAttributes);
-
-        if ($insert) {
-            Yii::$app->db->lastInsertID;
-        }
-    }
-
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getCar()
     {
         return $this->hasOne(Car::className(), ['advent_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCharacteristic()
-    {
-        return $this->hasOne(Characteristic::className(), ['advent_id' => 'id']);
     }
 
     /**

@@ -14,9 +14,13 @@ class FormService
         $this->formRepository = $formRepository;
     }
 
-    public function index($queryParams)
+    public function searchModel()
     {
-        $this->formRepository->index($queryParams);
+        return $this->formRepository->searchModel();
+    }
+    public function dataProvider($queryParams)
+    {
+        return $this->formRepository->dataProvider($queryParams);
     }
 
     public function create(CompositeModelForm $form)

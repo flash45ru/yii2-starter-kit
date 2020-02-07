@@ -58,16 +58,16 @@ class Car extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCharacteristics()
+    public function getCharacteristic()
     {
-        return $this->hasMany(Characteristic::className(), ['car_id' => 'id']);
+        return $this->hasOne(Characteristic::className(), ['car_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getOptions()
+    public function getOption()
     {
-        return $this->hasMany(Options::className(), ['car_id' => 'id']);
+        return $this->hasOne(Options::className(), ['car_id' => 'id']);
     }
 }

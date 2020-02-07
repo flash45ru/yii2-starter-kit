@@ -4,7 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use app\models\Advent;
-use frontend\models\search\AdventSearch;
+use frontend\models\search\Search;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -50,7 +50,7 @@ class AdventController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new AdventSearch();
+        $searchModel = new Search();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

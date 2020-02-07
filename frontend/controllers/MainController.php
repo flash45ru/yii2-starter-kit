@@ -1,11 +1,8 @@
 <?php
 
-
 namespace frontend\controllers;
 
-
 use frontend\models\forms\CompositeModelForm;
-use frontend\models\search\AdventSearch;
 use frontend\repository\FormRepository;
 use frontend\services\FormService;
 use http\Exception;
@@ -25,20 +22,8 @@ class MainController extends Controller
     public function actionIndex()
     {
         $queryParams = Yii::$app->request->queryParams;
-        $query = $this->service->index($queryParams);
-
-
-//        $query = Advent::find()
-//            ->joinWith(['car' => function ($model) {
-//                $model->joinWith(['characteristics', 'options']);
-//            }]);
-//
-//        $dataProvider = new ActiveDataProvider([
-//            'query' => $query,
-//            'pagination' => [
-//                'pageSize' => 20,
-//            ],
-//        ]);
+        $searchModel = $this->service->searchModel();
+        $dataProvider = $this->service->dataProvider($queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
