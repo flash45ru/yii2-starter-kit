@@ -37,7 +37,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($advent, 'price')->textInput() ?>
     <?= $form->field($advent, 'contacts')->textInput() ?>
 
-    <?= $form->field($file, 'image')->widget(
+    <?= $form->field($advent, 'images')->widget(
         \trntv\filekit\widget\Upload::class,
         [
             'url' => ['/file/storage/upload'],

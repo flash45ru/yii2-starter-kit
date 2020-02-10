@@ -6,12 +6,8 @@ use app\models\Advent;
 use app\models\Car;
 use app\models\Characteristic;
 use app\models\Options;
-use app\models\Photo;
-use common\models\WidgetCarousel;
-use common\models\WidgetCarouselItem;
 use frontend\models\search\Search;
 use yii\base\ErrorException;
-use yii\web\HttpException;
 
 class FormRepository
 {
@@ -35,28 +31,15 @@ class FormRepository
         return $data_provider;
     }
 
-    public function widgetCarouselItem()
-    {
-        $widget_carousel_item = new WidgetCarouselItem();
-
-        return $widget_carousel_item;
-    }
-
     public function create($form)
     {
         $advent_model = new Advent($form->advent->attributes);
         $car_model = new Car();
         $characteristic_model = new Characteristic($form->characteristic->attributes);
         $options_model = new Options($form->options->attributes);
-        $photo_model = new Photo($form->options->attributes);
 
         $transaction = \Yii::$app->db->beginTransaction();
         if ($advent_model->save(false)) {
-
-            $photo_model->advent_id = $advent_model->id;
-            if (!$photo_model->save()) {
-                throw new ErrorException('Произошла ошибка при сохранении данных в "Photo"');
-            }
 
             $car_model->advent_id = $advent_model->id;
             if (!$car_model->save()) {
@@ -91,6 +74,7 @@ class FormRepository
     public function update($form)
     {
         $transaction = \Yii::$app->db->beginTransaction();
+
         try {
             $this->_advent_model->attributes = $form->advent->attributes;
             if (!$this->_advent_model->save(false)) {
@@ -196,6 +180,3 @@ class FormRepository
         return false;
     }
 }
-//        echo '<pre>';
-//        var_dump($model); die();
-//        echo '</pre>';

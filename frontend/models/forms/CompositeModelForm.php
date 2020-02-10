@@ -9,10 +9,9 @@ class CompositeModelForm extends CompositeModelFormMain
         'advent' => AdventForm::class,
         'characteristic' => CharacteristicForm::class,
         'options' => OptionsForm::class,
-        'photo' => PhotoForm::class,
     );
     private $internal_forms = [
-        'advent', 'characteristic', 'options', 'photo'
+        'advent', 'characteristic', 'options'
     ];
     private $new_forms = [];
 

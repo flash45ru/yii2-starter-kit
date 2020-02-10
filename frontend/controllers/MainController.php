@@ -35,12 +35,11 @@ class MainController extends Controller
     public function actionCreate()
     {
         $form = new CompositeModelForm([
-            'advent', 'characteristic', 'options', 'photo'
+            'advent', 'characteristic', 'options'
         ]);
 
-        $widget_carousel_item = $this->service->widgetCarouselItem();
-
         if ($form->load(\Yii::$app->request->post()) && $form->validate()) {
+
             try {
                 $this->service->create($form);
                 Yii::$app->session->setFlash('success', "Form created successfully.");
@@ -55,7 +54,6 @@ class MainController extends Controller
             'advent' => $form->advent,
             'characteristic' => $form->characteristic,
             'options' => $form->options,
-            'file' => $widget_carousel_item,
         ]);
     }
 

@@ -2,22 +2,20 @@
 
 namespace app\models;
 
-use common\behaviors\CacheInvalidateBehavior;
-use common\models\WidgetCarousel;
-use trntv\filekit\behaviors\UploadBehavior;
-use Yii;
-use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "photo".
  *
  * @property int $id
  * @property int $advent_id
- * @property string $image_id
+ * @property string $path
+ * @property string $base_url
+ * @property string $type
  *
  * @property Advent $advent
  */
-class Photo extends \yii\db\ActiveRecord
+class Photo extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -33,8 +31,8 @@ class Photo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['advent_id'], 'required'],
-            [['advent_id', 'image_id'], 'integer'],
+            [['advent_id'], 'integer'],
+            [['path', 'base_url', 'type'], 'string'],
             [['advent_id'], 'exist', 'skipOnError' => true, 'targetClass' => Advent::className(), 'targetAttribute' => ['advent_id' => 'id']],
         ];
     }

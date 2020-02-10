@@ -22,11 +22,6 @@ class FormService
         return $this->form_repository->dataProvider($queryParams);
     }
 
-    public function widgetCarouselItem()
-    {
-        return $this->form_repository->widgetCarouselItem();
-    }
-
     public function create(CompositeModelForm $form)
     {
         $this->form_repository->create($form);

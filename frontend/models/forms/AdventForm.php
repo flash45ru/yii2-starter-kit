@@ -2,6 +2,7 @@
 
 namespace frontend\models\forms;
 
+use trntv\filekit\behaviors\UploadBehavior;
 use Yii;
 use yii\base\Model;
 
@@ -13,14 +14,24 @@ use yii\base\Model;
  * @property string $description
  * @property string $price
  * @property string $contacts
+ * @property string $images
  */
 class AdventForm extends Model
 {
     public $id;
-    public $title;
-    public $description;
-    public $price;
-    public $contacts;
+//    public $title;
+//    public $description;
+//    public $price;
+//    public $contacts;
+    public $title = 'auto form';
+    public $description = 'auto description';
+    public $price = '123456789';
+    public $contacts = '11-11-11';
+
+    /**
+     * @var array|null
+     */
+    public $images;
 
     /**
      * {@inheritdoc}
@@ -33,6 +44,7 @@ class AdventForm extends Model
             [['description'], 'string'],
             [['price'], 'number'],
             [['title', 'contacts'], 'string', 'max' => 255],
+            [['images'], 'safe'],
         ];
     }
 
@@ -55,8 +67,10 @@ class AdventForm extends Model
     public function init($model = null)
     {
         parent::init();
-        if (!is_null($model))
+        if (!is_null($model)){
             $this->attributes = $model->attributes;
+            $this->images = $model->images;
+        }
     }
 
 }

@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $advent app\models\Advent */
 /* @var $characteristic app\models\Characteristic */
 /* @var $options app\models\Options */
- /* @var $file common\models\WidgetCarouselItem */
+ /* @var $image app\models\Photo */
 
 $this->title = 'Create';
 $this->params['breadcrumbs'][] = ['label' => 'Обьявление', 'url' => ['index']];
@@ -20,7 +20,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'advent' => $advent,
         'characteristic' => $characteristic,
         'options' => $options,
-        'file' => $file,
     ]) ?>
 
 </div>

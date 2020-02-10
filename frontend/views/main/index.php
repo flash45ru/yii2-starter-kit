@@ -62,8 +62,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'value' => function ($model) {
                     $translate = ['0' => 'Нет', '1' => 'Есть'];
-                    if ($model->car->option->conditioner)
+                    if (!empty($model->car->option->conditioner)) {
                         return $translate[$model->car->option->conditioner];
+                    } else {
+                        return '- - -';
+                    }
                 }
             ],
             [
@@ -77,8 +80,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'value' => function ($model) {
                     $translate = ['0' => 'Нет', '1' => 'Есть'];
-                    if ($model->car->option->airbags)
+                    if (!empty($model->car->option->airbags)) {
                         return $translate[$model->car->option->airbags];
+                    } else {
+                        return '- - -';
+                    }
                 }
             ],
             [
@@ -92,8 +98,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'value' => function ($model) {
                     $translate = ['0' => 'Нет', '1' => 'Есть'];
-                    if ($model->car->option->multimedia)
+                    if (!empty($model->car->option->multimedia)) {
                         return $translate[$model->car->option->multimedia];
+                    } else {
+                        return '- - -';
+                    }
                 }
             ],
             [
@@ -107,15 +116,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'value' => function ($model) {
                     $translate = ['0' => 'Нет', '1' => 'Есть'];
-                    if ($model->car->option->cruise_control)
+                    if (!empty($model->car->option->cruise_control)) {
                         return $translate[$model->car->option->cruise_control];
+                    } else {
+                        return '- - -';
+                    }
                 }
             ],
             'price',
-//            ['label' => 'Изображение', 'content' => function ($model) {
-//                return "<img src='http://yii2-starter-kit.localhost/img/yii2-starter-kit.gif' style='height: 50px'/>";
-//            }
-//            ],
+            ['label' => 'Изображение', 'content' => function ($model) {
+                if(!empty($model->images[0]['path'])){
+                $url = $model->images[0]['base_url'].$model->images[0]['path'];
+                    return "<img src='$url' style='height: 50px'/>";
+                }
+            }
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
