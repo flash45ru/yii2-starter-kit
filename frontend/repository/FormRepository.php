@@ -6,6 +6,7 @@ use app\models\Advent;
 use app\models\Car;
 use app\models\Characteristic;
 use app\models\Options;
+use frontend\models\forms\AdventForm;
 use frontend\models\search\Search;
 use yii\base\ErrorException;
 
@@ -88,6 +89,10 @@ class FormRepository
 
             if ($form->options->attributes['car_id'] === null) {
                 $options_model = new Options($form->options->attributes);
+                echo '<pre>';
+                var_dump($form->advent->attributes);
+                echo '</pre>';
+                die();
                 $options_model->car_id = self::getAdventIdFromCar($form->advent->attributes['id']);
                 if (!$options_model->save(false)) {
                     throw new ErrorException('Произошла ошибка при сохранении данных в "Options"');
@@ -111,7 +116,9 @@ class FormRepository
     {
         $this->_advent_model->attributes = $form->advent->attributes;
         $this->_characteristic_model->attributes = $form->characteristic->attributes;
-        $this->_options_model->attributes = $form->options->attributes;
+        if(!$form->options->attributes) {
+            $this->_options_model->attributes = $form->options->attributes;
+        }
     }
 
     public function delete()
@@ -134,6 +141,7 @@ class FormRepository
     {
         if ($this->_advent_model === null) {
             $this->_advent_model = Advent::findOne($id);
+//            $this->_advent_model->scenario = AdventForm::SCENARIO_UPDATE;
         }
 
         return $this->_advent_model;

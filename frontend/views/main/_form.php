@@ -42,7 +42,7 @@ use yii\widgets\ActiveForm;
         [
             'url' => ['/file/storage/upload'],
             'multiple' => true,
-            'maxNumberOfFiles' => 5,
+            'maxNumberOfFiles' => 2,
         ]
     ) ?>
 

@@ -28,7 +28,10 @@ class FormService
     }
 
     public function update(CompositeModelForm $form)
-    {
+    {echo '<pre>';
+        var_dump($form->advent->attributes);
+        echo '</pre>';
+        die();
         return $this->form_repository->update($form);
 
     }

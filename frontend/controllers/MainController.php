@@ -43,15 +43,12 @@ class MainController extends Controller
             try {
                 $this->service->create($form);
                 Yii::$app->session->setFlash('success', "Form created successfully.");
-            } catch (\Throwable $e) {
-                echo '<pre>';
-                var_dump($e);
-                echo '</pre>';
-                die();
-                Yii::$app->session->setFlash('error', "Form not saved.");
-            }
 
-//            return $this->redirect(['index']);
+                return $this->redirect(['index']);
+            } catch (\Throwable $e) {
+                Yii::$app->session->setFlash('error', "Form not saved.");
+
+            }
         }
 
         return $this->render('create', [
@@ -61,7 +58,7 @@ class MainController extends Controller
         ]);
     }
 
-    public function actionUpdate($id)
+    public function actionUpdate(int $id)
     {
         $form = new CompositeModelForm([
             'advent', 'characteristic', 'options'
@@ -75,6 +72,10 @@ class MainController extends Controller
 
         if ($form->load(\Yii::$app->request->post()) && $form->validate()) {
             try {
+                echo '<pre>';
+                var_dump($form->advent->attributes);
+                echo '</pre>';
+                die();
                 $this->service->update($form);
                 Yii::$app->session->setFlash('success', "Form updated successfully.");
             } catch (Exception $e) {
@@ -86,6 +87,7 @@ class MainController extends Controller
             'advent' => $form->advent,
             'characteristic' => $form->characteristic,
             'options' => $form->options,
+            'id' => $id
         ]);
     }
 

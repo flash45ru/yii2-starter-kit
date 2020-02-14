@@ -9,7 +9,7 @@ use yii\helpers\Html;
 
 $this->title = 'Update: ' . $advent->title;
 $this->params['breadcrumbs'][] = ['label' => 'Обьявления', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $advent->title, 'url' => ['view', 'id' => $advent->id]];
+$this->params['breadcrumbs'][] = ['label' => $advent->title, 'url' => ['view', 'id' => $id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="advent-update">

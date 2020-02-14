@@ -5,6 +5,7 @@ namespace frontend\models\forms;
 use trntv\filekit\behaviors\UploadBehavior;
 use Yii;
 use yii\base\Model;
+use yii\jui\Selectable;
 
 /**
  * This is the model class for table "advent".
@@ -18,6 +19,10 @@ use yii\base\Model;
  */
 class AdventForm extends Model
 {
+    //const SCENARIO_CREATE = 'create';
+    const SCENARIO_UPDATE = 'update';
+
+//    public $id;
     public $title;
     public $description;
     public $price;
@@ -31,9 +36,25 @@ class AdventForm extends Model
     /**
      * {@inheritdoc}
      */
+//    public function scenarios()
+//    {
+//        return [
+////            self::SCENARIO_CREATE => [
+////                [['description', 'price', 'title', 'contacts'], 'required'],
+////                [['description'], 'string'],
+////                [['price'], 'number'],
+////                [['title', 'contacts'], 'string', 'max' => 255],
+////                [['images'], 'safe'],
+////            ],
+//            self::SCENARIO_DEFAULT => ['description', 'price', 'title', 'contacts','images'],
+//            self::SCENARIO_UPDATE => ['id','description', 'price', 'title', 'contacts','images'],
+//        ];
+//    }
+
     public function rules()
     {
         return [
+//            [['id'], 'integer'],
             [['description', 'price', 'title', 'contacts'], 'required'],
             [['description'], 'string'],
             [['price'], 'number'],
@@ -57,11 +78,10 @@ class AdventForm extends Model
     }
 
 
-
     public function init($model = null)
     {
         parent::init();
-        if (!is_null($model)){
+        if (!is_null($model)) {
             $this->attributes = $model->attributes;
             $this->images = $model->images;
         }
