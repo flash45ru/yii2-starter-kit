@@ -17,7 +17,7 @@ class m200203_061945_create_photo_table extends Migration
     {
         $this->createTable('photo', [
             'id' => $this->primaryKey(),
-            'advent_id' => $this->integer()->notNull(),
+            'advent_id' => $this->integer(),
             'path' => $this->string(),
             'base_url' => $this->string(),
             'type' => $this->string(),
