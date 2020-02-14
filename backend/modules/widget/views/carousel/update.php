@@ -10,12 +10,12 @@ use yii\helpers\Html;
  * @var $carouselItemsProvider yii\data\ArrayDataProvider
  */
 
-$this->title = Yii::t('backend', 'Update {modelClass}: ', [
+$this->title = Yii::t('backend', 'Редактирование {modelClass}: ', [
         'modelClass' => 'Widget Carousel',
     ]) . ' ' . $model->key;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Widget Carousels'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
+$this->params['breadcrumbs'][] = ['label' => 'Widget Carousels', 'url' => ['index']];
+$this->params['breadcrumbs'][] = 'Update';
 
 ?>
 
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 </div>
 
 <p>
-    <?php echo Html::a(Yii::t('backend', 'Create {modelClass}', [
+    <?php echo Html::a(Yii::t('backend', 'Создание {modelClass}', [
         'modelClass' => 'Widget Carousel Item',
     ]), ['carousel-item/create', 'carousel_id' => $model->id], ['class' => 'btn btn-success']) ?>
 </p>
@@ -55,8 +55,8 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
             'attribute' => 'status',
             'options' => ['style' => 'width: 10%'],
             'enum' => [
-                Yii::t('backend', 'Disabled'),
-                Yii::t('backend', 'Enabled'),
+                'Disabled',
+                'Enabled',
             ],
         ],
         [

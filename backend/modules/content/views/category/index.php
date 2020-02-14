@@ -13,7 +13,7 @@ use yii\helpers\Html;
  * @var $categories   common\models\ArticleCategory[]
  */
 
-$this->title = Yii::t('backend', 'Article Categories');
+$this->title = 'Article Categories';
 
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="box box-success collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title"><?php echo Yii::t('backend', 'Create {modelClass}', ['modelClass' => 'Article Category']) ?></h3>
+        <h3 class="box-title"><?php echo Yii::t('backend', 'Создание {modelClass}', ['modelClass' => 'Article Category']) ?></h3>
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
         </div>

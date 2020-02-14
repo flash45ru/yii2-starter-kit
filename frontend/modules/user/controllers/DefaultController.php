@@ -73,7 +73,7 @@ class DefaultController extends Controller
             Yii::$app->session->setFlash('forceUpdateLocale');
             Yii::$app->session->setFlash('alert', [
                 'options' => ['class' => 'alert-success'],
-                'body' => Yii::t('frontend', 'Your account has been successfully saved', [], $locale)
+                'body' => Yii::t('frontend', 'Ваш аккаунт был успешно сохранён', [], $locale)
             ]);
             return $this->refresh();
         }

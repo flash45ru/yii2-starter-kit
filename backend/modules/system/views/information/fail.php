@@ -4,10 +4,10 @@
  */
 use yii\helpers\Html;
 
-$this->title = Yii::t('backend', 'System Information');
+$this->title = 'System Information';
 ?>
 <?php echo Yii::t(
     'backend',
-    'Sorry, application failed to collect information about your system. See {link}.',
+    'Извините, но приложению не удалось собрать информацию о вашей системе. Смотрите {link}.',
     ['link' => Html::a('trntv/probe', 'https://github.com/trntv/probe#user-content-supported-os')]
 );

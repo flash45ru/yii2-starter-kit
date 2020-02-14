@@ -41,7 +41,7 @@ class OwnModelAccessFilter extends ActionFilter
                     'attribute' => $this->modelCreatedByAttribute
                 ]);
                 if (!$isAllowed) {
-                    throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
+                    throw new ForbiddenHttpException('You are not allowed to perform this action.');
                 }
             }
         }

@@ -32,7 +32,7 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
         <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only"><?php echo Yii::t('backend', 'Toggle navigation') ?></span>
+                <span class="sr-only"><?php echo 'Toggle navigation' ?></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -56,7 +56,7 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header"><?php echo Yii::t('backend', 'You have {num} log items', ['num' => SystemLog::find()->count()]) ?></li>
+                            <li class="header"><?php echo Yii::t('backend', 'У вас {num} записей в журнале', ['num' => SystemLog::find()->count()]) ?></li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
@@ -71,7 +71,7 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                                 </ul>
                             </li>
                             <li class="footer">
-                                <?php echo Html::a(Yii::t('backend', 'View all'), ['/system/log/index']) ?>
+                                <?php echo Html::a('View all', ['/system/log/index']) ?>
                             </li>
                         </ul>
                     </li>
@@ -90,19 +90,19 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                                 <p>
                                     <?php echo Yii::$app->user->identity->username ?>
                                     <small>
-                                        <?php echo Yii::t('backend', 'Member since {0, date, short}', Yii::$app->user->identity->created_at) ?>
+                                        <?php echo Yii::t('backend', 'Участник с {0, date, short}', Yii::$app->user->identity->created_at) ?>
                                     </small>
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <?php echo Html::a(Yii::t('backend', 'Profile'), ['/sign-in/profile'], ['class' => 'btn btn-default btn-flat']) ?>
+                                    <?php echo Html::a('Profile', ['/sign-in/profile'], ['class' => 'btn btn-default btn-flat']) ?>
                                 </div>
                                 <div class="pull-left">
-                                    <?php echo Html::a(Yii::t('backend', 'Account'), ['/sign-in/account'], ['class' => 'btn btn-default btn-flat']) ?>
+                                    <?php echo Html::a('Account', ['/sign-in/account'], ['class' => 'btn btn-default btn-flat']) ?>
                                 </div>
                                 <div class="pull-right">
-                                    <?php echo Html::a(Yii::t('backend', 'Logout'), ['/sign-in/logout'], ['class' => 'btn btn-default btn-flat', 'data-method' => 'post']) ?>
+                                    <?php echo Html::a('Logout', ['/sign-in/logout'], ['class' => 'btn btn-default btn-flat', 'data-method' => 'post']) ?>
                                 </div>
                             </li>
                         </ul>
@@ -124,7 +124,7 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                     <img src="<?php echo Yii::$app->user->identity->userProfile->getAvatar($this->assetManager->getAssetUrl($bundle, 'img/anonymous.jpg')) ?>" class="img-circle" />
                 </div>
                 <div class="pull-left info">
-                    <p><?php echo Yii::t('backend', 'Hello, {username}', ['username' => Yii::$app->user->identity->getPublicIdentity()]) ?></p>
+                    <p><?php echo Yii::t('backend', 'Привет, {username}', ['username' => Yii::$app->user->identity->getPublicIdentity()]) ?></p>
                     <a href="<?php echo Url::to(['/sign-in/profile']) ?>">
                         <i class="fa fa-circle text-success"></i>
                         <?php echo Yii::$app->formatter->asDatetime(time()) ?>
@@ -139,35 +139,35 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                 'activateParents' => true,
                 'items' => [
                     [
-                        'label' => Yii::t('backend', 'Main'),
+                        'label' => 'Main',
                         'options' => ['class' => 'header'],
                     ],
                     [
-                        'label' => Yii::t('backend', 'Timeline'),
+                        'label' => 'Timeline',
                         'icon' => '<i class="fa fa-bar-chart-o"></i>',
                         'url' => ['/timeline-event/index'],
                         'badge' => TimelineEvent::find()->today()->count(),
                         'badgeBgClass' => 'label-success',
                     ],
                     [
-                        'label' => Yii::t('backend', 'Users'),
+                        'label' => 'Users',
                         'icon' => '<i class="fa fa-users"></i>',
                         'url' => ['/user/index'],
                         'active' => Yii::$app->controller->id === 'user',
                         'visible' => Yii::$app->user->can('administrator'),
                     ],
                     [
-                        'label' => Yii::t('backend', 'Content'),
+                        'label' => 'Content',
                         'options' => ['class' => 'header'],
                     ],
                     [
-                        'label' => Yii::t('backend', 'Static pages'),
+                        'label' => 'Static pages',
                         'url' => ['/content/page/index'],
                         'icon' => '<i class="fa fa-thumb-tack"></i>',
                         'active' => Yii::$app->controller->id === 'page',
                     ],
                     [
-                        'label' => Yii::t('backend', 'Articles'),
+                        'label' => 'Articles',
                         'url' => '#',
                         'icon' => '<i class="fa fa-files-o"></i>',
                         'options' => ['class' => 'treeview'],
@@ -175,13 +175,13 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                             ('article' === Yii::$app->controller->id || 'category' === Yii::$app->controller->id),
                         'items' => [
                             [
-                                'label' => Yii::t('backend', 'Articles'),
+                                'label' => 'Articles',
                                 'url' => ['/content/article/index'],
                                 'icon' => '<i class="fa fa-file-o"></i>',
                                 'active' => Yii::$app->controller->id === 'article',
                             ],
                             [
-                                'label' => Yii::t('backend', 'Categories'),
+                                'label' => 'Categories',
                                 'url' => ['/content/category/index'],
                                 'icon' => '<i class="fa fa-folder-open-o"></i>',
                                 'active' => Yii::$app->controller->id === 'category',
@@ -189,26 +189,26 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                         ],
                     ],
                     [
-                        'label' => Yii::t('backend', 'Widgets'),
+                        'label' => 'Widgets',
                         'url' => '#',
                         'icon' => '<i class="fa fa-code"></i>',
                         'options' => ['class' => 'treeview'],
                         'active' => Yii::$app->controller->module->id === 'widget',
                         'items' => [
                             [
-                                'label' => Yii::t('backend', 'Text Blocks'),
+                                'label' => 'Text Blocks',
                                 'url' => ['/widget/text/index'],
                                 'icon' => '<i class="fa fa-circle-o"></i>',
                                 'active' => Yii::$app->controller->id === 'text',
                             ],
                             [
-                                'label' => Yii::t('backend', 'Menu'),
+                                'label' => 'Menu',
                                 'url' => ['/widget/menu/index'],
                                 'icon' => '<i class="fa fa-circle-o"></i>',
                                 'active' => Yii::$app->controller->id === 'menu',
                             ],
                             [
-                                'label' => Yii::t('backend', 'Carousel'),
+                                'label' => 'Carousel',
                                 'url' => ['/widget/carousel/index'],
                                 'icon' => '<i class="fa fa-circle-o"></i>',
                                 'active' => in_array(Yii::$app->controller->id, ['carousel', 'carousel-item']),
@@ -216,65 +216,65 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                         ],
                     ],
                     [
-                        'label' => Yii::t('backend', 'Translation'),
+                        'label' => 'Translation',
                         'options' => ['class' => 'header'],
                         'visible' => Yii::$app->components["i18n"]["translations"]['*']['class'] === \yii\i18n\DbMessageSource::class,
                     ],
                     [
-                        'label' => Yii::t('backend', 'Translation'),
+                        'label' => 'Translation',
                         'url' => ['/translation/default/index'],
                         'icon' => '<i class="fa fa-language"></i>',
                         'active' => (Yii::$app->controller->module->id == 'translation'),
                         'visible' => Yii::$app->components["i18n"]["translations"]['*']['class'] === \yii\i18n\DbMessageSource::class,
                     ],
                     [
-                        'label' => Yii::t('backend', 'System'),
+                        'label' => 'System',
                         'options' => ['class' => 'header'],
                     ],
                     [
-                        'label' => Yii::t('backend', 'RBAC Rules'),
+                        'label' => 'RBAC Rules',
                         'url' => '#',
                         'icon' => '<i class="fa fa-flag"></i>',
                         'options' => ['class' => 'treeview'],
                         'active' => in_array(Yii::$app->controller->id, ['rbac-auth-assignment', 'rbac-auth-item', 'rbac-auth-item-child', 'rbac-auth-rule']),
                         'items' => [
                             [
-                                'label' => Yii::t('backend', 'Auth Assignment'),
+                                'label' => 'Auth Assignment',
                                 'url' => ['/rbac/rbac-auth-assignment/index'],
                                 'icon' => '<i class="fa fa-circle-o"></i>',
                             ],
                             [
-                                'label' => Yii::t('backend', 'Auth Items'),
+                                'label' => 'Auth Items',
                                 'url' => ['/rbac/rbac-auth-item/index'],
                                 'icon' => '<i class="fa fa-circle-o"></i>',
                             ],
                             [
-                                'label' => Yii::t('backend', 'Auth Item Child'),
+                                'label' => 'Auth Item Child',
                                 'url' => ['/rbac/rbac-auth-item-child/index'],
                                 'icon' => '<i class="fa fa-circle-o"></i>',
                             ],
                             [
-                                'label' => Yii::t('backend', 'Auth Rules'),
+                                'label' => 'Auth Rules',
                                 'url' => ['/rbac/rbac-auth-rule/index'],
                                 'icon' => '<i class="fa fa-circle-o"></i>',
                             ],
                         ],
                     ],
                     [
-                        'label' => Yii::t('backend', 'Files'),
+                        'label' => 'Files',
                         'url' => '#',
                         'icon' => '<i class="fa fa-th-large"></i>',
                         'options' => ['class' => 'treeview'],
                         'active' => (Yii::$app->controller->module->id == 'file'),
                         'items' => [
                             [
-                                'label' => Yii::t('backend', 'Storage'),
+                                'label' => 'Storage',
                                 'url' => ['/file/storage/index'],
                                 'icon' => '<i class="fa fa-database"></i>',
                                 'active' => (Yii::$app->controller->id == 'storage'),
                             ],
                             [
-                                'label' => Yii::t('backend', 'Manager'),
+                                'label' => 'Manager',
                                 'url' => ['/file/manager/index'],
                                 'icon' => '<i class="fa fa-television"></i>',
                                 'active' => (Yii::$app->controller->id == 'manager'),
@@ -282,23 +282,23 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                         ],
                     ],
                     [
-                        'label' => Yii::t('backend', 'Key-Value Storage'),
+                        'label' => 'Key-Value Storage',
                         'url' => ['/system/key-storage/index'],
                         'icon' => '<i class="fa fa-arrows-h"></i>',
                         'active' => (Yii::$app->controller->id == 'key-storage'),
                     ],
                     [
-                        'label' => Yii::t('backend', 'Cache'),
+                        'label' => 'Cache',
                         'url' => ['/system/cache/index'],
                         'icon' => '<i class="fa fa-refresh"></i>',
                     ],
                     [
-                        'label' => Yii::t('backend', 'System Information'),
+                        'label' => 'System Information',
                         'url' => ['/system/information/index'],
                         'icon' => '<i class="fa fa-dashboard"></i>',
                     ],
                     [
-                        'label' => Yii::t('backend', 'Logs'),
+                        'label' => 'Logs',
                         'url' => ['/system/log/index'],
                         'icon' => '<i class="fa fa-warning"></i>',
                         'badge' => SystemLog::find()->count(),

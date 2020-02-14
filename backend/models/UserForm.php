@@ -92,11 +92,11 @@ class UserForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => Yii::t('common', 'Username'),
-            'email' => Yii::t('common', 'Email'),
-            'status' => Yii::t('common', 'Status'),
-            'password' => Yii::t('common', 'Password'),
-            'roles' => Yii::t('common', 'Roles')
+            'username' => 'Username',
+            'email' => 'Email',
+            'status' => 'Status',
+            'password' => 'Password',
+            'roles' => 'Roles'
         ];
     }
 

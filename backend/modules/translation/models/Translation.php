@@ -53,9 +53,9 @@ class Translation extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => Yii::t('backend', 'ID'),
-            'language'    => Yii::t('backend', 'Language'),
-            'translation' => Yii::t('backend', 'Translation'),
+            'id'          => 'ID',
+            'language'    => 'Language',
+            'translation' => 'Translation',
         ];
     }
 

@@ -15,15 +15,15 @@ class SettingsController extends Controller
         $model = new FormModel([
             'keys' => [
                 'frontend.maintenance' => [
-                    'label' => Yii::t('backend', 'Frontend maintenance mode'),
+                    'label' => 'Frontend maintenance mode',
                     'type' => FormModel::TYPE_DROPDOWN,
                     'items' => [
-                        'disabled' => Yii::t('backend', 'Disabled'),
-                        'enabled' => Yii::t('backend', 'Enabled'),
+                        'disabled' => 'Disabled',
+                        'enabled' => 'Enabled',
                     ],
                 ],
                 'backend.theme-skin' => [
-                    'label' => Yii::t('backend', 'Backend theme'),
+                    'label' => 'Backend theme',
                     'type' => FormModel::TYPE_DROPDOWN,
                     'items' => [
                         'skin-black' => 'skin-black',
@@ -35,19 +35,19 @@ class SettingsController extends Controller
                     ],
                 ],
                 'backend.layout-fixed' => [
-                    'label' => Yii::t('backend', 'Fixed backend layout'),
+                    'label' => 'Fixed backend layout',
                     'type' => FormModel::TYPE_CHECKBOX,
                 ],
                 'backend.layout-boxed' => [
-                    'label' => Yii::t('backend', 'Boxed backend layout'),
+                    'label' => 'Boxed backend layout',
                     'type' => FormModel::TYPE_CHECKBOX,
                 ],
                 'backend.layout-collapsed-sidebar' => [
-                    'label' => Yii::t('backend', 'Backend sidebar collapsed'),
+                    'label' => 'Backend sidebar collapsed',
                     'type' => FormModel::TYPE_CHECKBOX,
                 ],
                 'backend.sidebar-mini' => [
-                    'label' => Yii::t('backend', 'Mini Backend Sidebar on Collapse'),
+                    'label' => 'Mini Backend Sidebar on Collapse',
                     'type' => FormModel::TYPE_CHECKBOX,
                 ],
             ],
@@ -55,7 +55,7 @@ class SettingsController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('backend', 'Settings was successfully saved'),
+                'body' => 'Settings was successfully saved',
                 'options' => ['class' => 'alert alert-success'],
             ]);
 

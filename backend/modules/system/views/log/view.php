@@ -8,15 +8,15 @@ use yii\widgets\DetailView;
  * @var $model backend\modules\system\models\SystemLog
  */
 
-$this->title = Yii::t('backend', 'Error #{id}', ['id' => $model->id]);
+$this->title = Yii::t('backend', 'Ошибка #{id}', ['id' => $model->id]);
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'System Logs'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'System Logs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 
 <p>
-    <?php echo Html::a(Yii::t('backend', 'Delete'), ['delete', 'id' => $model->id], ['class' => 'btn btn-danger', 'data' => ['method' => 'post']]) ?>
+    <?php echo Html::a('Delete', ['delete', 'id' => $model->id], ['class' => 'btn btn-danger', 'data' => ['method' => 'post']]) ?>
 </p>
 
 <?php echo DetailView::widget([

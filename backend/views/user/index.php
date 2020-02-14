@@ -11,7 +11,7 @@ use yii\web\JsExpression;
 /* @var $searchModel backend\models\search\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('backend', 'Users');
+$this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?php echo Html::a(Yii::t('backend', 'Create {modelClass}', [
+        <?php echo Html::a(Yii::t('backend', 'Создание {modelClass}', [
     'modelClass' => 'User',
 ]), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 '<i class="fa fa-sign-in" aria-hidden="true"></i>',
                                 $url,
                                 [
-                                    'title' => Yii::t('backend', 'Login')
+                                    'title' => 'Login'
                                 ]
                         );
                     },

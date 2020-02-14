@@ -84,7 +84,7 @@ class SignInController extends Controller
         if ($model->load($_POST) && $model->save()) {
             Yii::$app->session->setFlash('alert', [
                 'options' => ['class' => 'alert-success'],
-                'body' => Yii::t('backend', 'Your profile has been successfully saved', [], $model->locale)
+                'body' => Yii::t('backend', 'Ваш профиль был успешно сохранён', [], $model->locale)
             ]);
             return $this->refresh();
         }
@@ -106,7 +106,7 @@ class SignInController extends Controller
             $user->save();
             Yii::$app->session->setFlash('alert', [
                 'options' => ['class' => 'alert-success'],
-                'body' => Yii::t('backend', 'Your account has been successfully saved')
+                'body' => 'Your account has been successfully saved'
             ]);
             return $this->refresh();
         }

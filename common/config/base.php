@@ -64,6 +64,12 @@ $config = [
             'tablePrefix' => env('DB_TABLE_PREFIX'),
             'charset' => env('DB_CHARSET', 'utf8'),
             'enableSchemaCache' => YII_ENV_PROD,
+            'schemaMap' => [
+                'pgsql' => [
+                    'class' => 'yii\db\pgsql\Schema',
+                    'defaultSchema' => 'public',
+                ],
+            ],
         ],
 
         'log' => [

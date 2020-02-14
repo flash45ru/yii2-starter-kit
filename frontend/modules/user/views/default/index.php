@@ -8,14 +8,14 @@ use yii\widgets\ActiveForm;
 /* @var $model common\base\MultiModel */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->title = Yii::t('frontend', 'User Settings')
+$this->title = 'User Settings'
 ?>
 
 <div class="user-profile-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <h2><?php echo Yii::t('frontend', 'Profile settings') ?></h2>
+    <h2><?php echo 'Profile settings' ?></h2>
 
     <?php echo $form->field($model->getModel('profile'), 'picture')->widget(
         Upload::class,
@@ -33,11 +33,11 @@ $this->title = Yii::t('frontend', 'User Settings')
     <?php echo $form->field($model->getModel('profile'), 'locale')->dropDownlist(Yii::$app->params['availableLocales']) ?>
 
     <?php echo $form->field($model->getModel('profile'), 'gender')->dropDownlist([
-        \common\models\UserProfile::GENDER_FEMALE => Yii::t('frontend', 'Female'),
-        \common\models\UserProfile::GENDER_MALE => Yii::t('frontend', 'Male')
+        \common\models\UserProfile::GENDER_FEMALE => 'Female',
+        \common\models\UserProfile::GENDER_MALE => 'Male'
     ], ['prompt' => '']) ?>
 
-    <h2><?php echo Yii::t('frontend', 'Account Settings') ?></h2>
+    <h2><?php echo 'Account Settings' ?></h2>
 
     <?php echo $form->field($model->getModel('account'), 'username') ?>
 
@@ -48,7 +48,7 @@ $this->title = Yii::t('frontend', 'User Settings')
     <?php echo $form->field($model->getModel('account'), 'password_confirm')->passwordInput() ?>
 
     <div class="form-group">
-        <?php echo Html::submitButton(Yii::t('frontend', 'Update'), ['class' => 'btn btn-primary']) ?>
+        <?php echo Html::submitButton('Update', ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

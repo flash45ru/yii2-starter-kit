@@ -34,8 +34,8 @@ class WidgetCarousel extends ActiveRecord
     public static function statuses()
     {
         return [
-            self::STATUS_DRAFT => Yii::t('common', 'Draft'),
-            self::STATUS_ACTIVE => Yii::t('common', 'Active'),
+            self::STATUS_DRAFT => 'Draft',
+            self::STATUS_ACTIVE => 'Active',
         ];
     }
 
@@ -79,9 +79,9 @@ class WidgetCarousel extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('common', 'ID'),
-            'key' => Yii::t('common', 'Key'),
-            'status' => Yii::t('common', 'Active'),
+            'id' => 'ID',
+            'key' => 'Key',
+            'status' => 'Active',
         ];
     }
 

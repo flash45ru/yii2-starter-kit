@@ -5,13 +5,13 @@
  * @var $model common\models\WidgetCarouselItem
  */
 
-$this->title = Yii::t('backend', 'Update {modelClass}: ', [
+$this->title = Yii::t('backend', 'Редактирование {modelClass}: ', [
         'modelClass' => 'Widget Carousel Item',
     ]) . ' ' . $model->id;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Widget Carousel Items'), 'url' => ['/widget/carousel/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Widget Carousel Items', 'url' => ['/widget/carousel/index']];
 $this->params['breadcrumbs'][] = ['label' => $model->carousel->key, 'url' => ['/widget/carousel/update', 'id' => $model->carousel->id]];
-$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
+$this->params['breadcrumbs'][] = 'Update';
 
 ?>
 

@@ -17,7 +17,7 @@ $this->title = $name;
                     <i class="fa fa-warning text-yellow"></i>
                     <?php echo Yii::t(
                         'backend',
-                        'Error {code}',
+                        'Ошибка {code}',
                         [
                             'code' => property_exists($exception, 'statusCode') ? $exception->statusCode : 500
                         ])

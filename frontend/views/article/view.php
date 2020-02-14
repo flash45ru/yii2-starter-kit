@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('frontend', 'Articles'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Articles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="content">
@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php echo $model->body ?>
 
         <?php if (!empty($model->articleAttachments)): ?>
-            <h3><?php echo Yii::t('frontend', 'Attachments') ?></h3>
+            <h3><?php echo 'Attachments' ?></h3>
             <ul id="article-attachments">
                 <?php foreach ($model->articleAttachments as $attachment): ?>
                     <li>

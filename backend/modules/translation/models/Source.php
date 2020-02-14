@@ -45,9 +45,9 @@ class Source extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'       => Yii::t('backend', 'ID'),
-            'category' => Yii::t('backend', 'Category'),
-            'message'  => Yii::t('backend', 'Message'),
+            'id'       => 'ID',
+            'category' => 'Category',
+            'message'  => 'Message',
         ];
     }
 

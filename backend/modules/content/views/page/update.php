@@ -5,12 +5,12 @@
  * @var $model common\models\Page
  */
 
-$this->title = Yii::t('backend', 'Update {modelClass}: ', [
+$this->title = Yii::t('backend', 'Редактирование {modelClass}: ', [
         'modelClass' => 'Page',
     ]) . ' ' . $model->title;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Pages'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
+$this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['index']];
+$this->params['breadcrumbs'][] = 'Update';
 
 ?>
 

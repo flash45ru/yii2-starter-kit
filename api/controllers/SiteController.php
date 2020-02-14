@@ -38,7 +38,7 @@ class SiteController extends Controller
     public function actionError()
     {
         if (($exception = Yii::$app->getErrorHandler()->exception) === null) {
-            $exception = new NotFoundHttpException(Yii::t('yii', 'Page not found.'));
+            $exception = new NotFoundHttpException('Page not found.');
         }
 
         if ($exception instanceof \HttpException) {

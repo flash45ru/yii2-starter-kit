@@ -25,7 +25,6 @@ class FormService
     public function create(CompositeModelForm $form)
     {
         $this->form_repository->create($form);
-
     }
 
     public function update(CompositeModelForm $form)

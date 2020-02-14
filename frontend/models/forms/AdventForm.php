@@ -18,15 +18,10 @@ use yii\base\Model;
  */
 class AdventForm extends Model
 {
-    public $id;
-//    public $title;
-//    public $description;
-//    public $price;
-//    public $contacts;
-    public $title = 'auto form';
-    public $description = 'auto description';
-    public $price = '123456789';
-    public $contacts = '11-11-11';
+    public $title;
+    public $description;
+    public $price;
+    public $contacts;
 
     /**
      * @var array|null
@@ -39,7 +34,6 @@ class AdventForm extends Model
     public function rules()
     {
         return [
-            [['id'], 'integer'],
             [['description', 'price', 'title', 'contacts'], 'required'],
             [['description'], 'string'],
             [['price'], 'number'],

@@ -71,8 +71,8 @@ class Article extends ActiveRecord
     public static function statuses()
     {
         return [
-            self::STATUS_DRAFT => Yii::t('common', 'Draft'),
-            self::STATUS_PUBLISHED => Yii::t('common', 'Published'),
+            self::STATUS_DRAFT => 'Draft',
+            self::STATUS_PUBLISHED => 'Published',
         ];
     }
 
@@ -138,19 +138,19 @@ class Article extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('common', 'ID'),
-            'slug' => Yii::t('common', 'Slug'),
-            'title' => Yii::t('common', 'Title'),
-            'body' => Yii::t('common', 'Body'),
-            'view' => Yii::t('common', 'Article View'),
-            'thumbnail' => Yii::t('common', 'Thumbnail'),
-            'category_id' => Yii::t('common', 'Category'),
-            'status' => Yii::t('common', 'Published'),
-            'published_at' => Yii::t('common', 'Published At'),
-            'created_by' => Yii::t('common', 'Author'),
-            'updated_by' => Yii::t('common', 'Updater'),
-            'created_at' => Yii::t('common', 'Created At'),
-            'updated_at' => Yii::t('common', 'Updated At'),
+            'id' => 'ID',
+            'slug' => 'Slug',
+            'title' => 'Title',
+            'body' => 'Body',
+            'view' => 'Article View',
+            'thumbnail' => 'Thumbnail',
+            'category_id' => 'Category',
+            'status' => 'Published',
+            'published_at' => 'Published At',
+            'created_by' => 'Author',
+            'updated_by' => 'Updater',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 

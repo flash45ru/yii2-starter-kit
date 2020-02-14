@@ -46,12 +46,12 @@ class SystemLog extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('backend', 'ID'),
-            'level' => Yii::t('backend', 'Level'),
-            'category' => Yii::t('backend', 'Category'),
-            'log_time' => Yii::t('backend', 'Log Time'),
-            'prefix' => Yii::t('backend', 'Prefix'),
-            'message' => Yii::t('backend', 'Message'),
+            'id' => 'ID',
+            'level' => 'Level',
+            'category' => 'Category',
+            'log_time' => 'Log Time',
+            'prefix' => 'Prefix',
+            'message' => 'Message',
         ];
     }
 }

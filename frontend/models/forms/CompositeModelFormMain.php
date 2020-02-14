@@ -15,10 +15,6 @@ abstract class CompositeModelFormMain extends Model
 
     public function load($data, $formName = null)
     {
-//        echo '<pre>';
-//        var_dump($data);
-//        echo '</pre>';
-//        die();
         $success = parent::load($data, $formName);
         foreach ($this->_forms as $name => $form) {
             if (is_array($form)) {
@@ -27,6 +23,7 @@ abstract class CompositeModelFormMain extends Model
                 $success = $form->load($data, $formName !== '' ? null : $name) || $success;
             }
         }
+
         return $success;
     }
 
@@ -40,7 +37,6 @@ abstract class CompositeModelFormMain extends Model
         }
 
         foreach ($this->_forms as $name => $form) {
-
             if ($attributeNames === null || array_key_exists($name, $attributeNames) || in_array($name, $attributeNames, true)) {
                 $innerNames = ArrayHelper::getValue($attributeNames, $name);
                 if (is_array($form)) {

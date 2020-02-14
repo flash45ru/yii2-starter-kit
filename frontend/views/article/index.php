@@ -6,11 +6,11 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-$this->title = Yii::t('frontend', 'Articles')
+$this->title = 'Articles'
 ?>
 <div id="article-index">
     <h1>
-        <?php echo Yii::t('frontend', 'Articles') ?>
+        <?php echo 'Articles' ?>
     </h1>
     <span class="glyphicon glyphicon-search" data-toggle="collapse" data-target="#search-form"></span>
     <div class="collapse" id="search-form">
@@ -20,7 +20,7 @@ $this->title = Yii::t('frontend', 'Articles')
         ]) ?>
             <div>
                 <?php echo $form->field($searchModel, 'title')->label(false)->error(false) ?>
-                <?php echo Html::submitButton(Yii::t('frontend', 'Search'), ['class' => 'btn btn-default']) ?>
+                <?php echo Html::submitButton('Search', ['class' => 'btn btn-default']) ?>
             </div>
         <?php ActiveForm::end() ?>
     </div>

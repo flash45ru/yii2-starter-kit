@@ -20,7 +20,7 @@ use yii\helpers\Html;
 <?php if (!$model->getModel('source')->isNewRecord) { ?>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title"><?php echo Yii::t('backend', 'Translations') ?></h3>
+            <h3 class="panel-title"><?php echo 'Translations' ?></h3>
         </div>
         <div class="panel-body">
             <?php foreach ($languages as $language => $name) {
@@ -34,7 +34,7 @@ use yii\helpers\Html;
 <?php } ?>
 
 <div class="form-group">
-    <?php echo Html::submitButton(Yii::t('backend', 'Save'), ['class' => 'btn btn-primary']) ?>
+    <?php echo Html::submitButton('Save', ['class' => 'btn btn-primary']) ?>
 </div>
 
 <?php ActiveForm::end(); ?>

@@ -22,7 +22,7 @@ use yii\web\JsExpression;
 <?php echo $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
 <?php echo $form->field($model, 'slug')
-    ->hint(Yii::t('backend', 'If you leave this field empty, the slug will be generated automatically'))
+    ->hint('If you leave this field empty, the slug will be generated automatically')
     ->textInput(['maxlength' => true]) ?>
 
 <?php echo $form->field($model, 'category_id')->dropDownList(\yii\helpers\ArrayHelper::map(
@@ -78,7 +78,7 @@ use yii\web\JsExpression;
 
 <div class="form-group">
     <?php echo Html::submitButton(
-        $model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'),
+        $model->isNewRecord ? 'Create' : 'Update',
         ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
 </div>
 

@@ -17,14 +17,11 @@ use yii\base\Model;
 class CharacteristicForm extends Model
 {
     public $car_id;
-//    public $model;
-//    public $year;
-//    public $carcase;
-//    public $mileage;
-    public $model = 'auto BMW';
-    public $year = '1234';
-    public $carcase = 'df353sd6446432';
-    public $mileage = 100000;
+    public $model;
+    public $year;
+    public $carcase;
+    public $mileage;
+
     /**
      * {@inheritdoc}
      */

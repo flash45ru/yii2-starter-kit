@@ -35,8 +35,8 @@ class WidgetMenu extends ActiveRecord
     public static function statuses()
     {
         return [
-            self::STATUS_DRAFT => Yii::t('common', 'Draft'),
-            self::STATUS_ACTIVE => Yii::t('common', 'Active'),
+            self::STATUS_DRAFT => 'Draft',
+            self::STATUS_ACTIVE => 'Active',
         ];
     }
 
@@ -79,11 +79,11 @@ class WidgetMenu extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('common', 'ID'),
-            'key' => Yii::t('common', 'Key'),
-            'title' => Yii::t('common', 'Title'),
-            'items' => Yii::t('common', 'Config'),
-            'status' => Yii::t('common', 'Status')
+            'id' => 'ID',
+            'key' => 'Key',
+            'title' => 'Title',
+            'items' => 'Config',
+            'status' => 'Status'
         ];
     }
 }

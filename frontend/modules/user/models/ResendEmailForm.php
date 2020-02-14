@@ -56,7 +56,7 @@ class ResendEmailForm extends Model
     public function attributeLabels()
     {
         return [
-            'email' => Yii::t('frontend', 'E-mail')
+            'email' => 'E-mail'
         ];
     }
 
@@ -71,7 +71,7 @@ class ResendEmailForm extends Model
         if ($user) {
             $token = UserToken::create($user->id, UserToken::TYPE_ACTIVATION, Time::SECONDS_IN_A_DAY);
             Yii::$app->commandBus->handle(new SendEmailCommand([
-                'subject' => Yii::t('frontend', 'Activation email'),
+                'subject' => 'Activation email',
                 'view' => 'activation',
                 'to' => $this->email,
                 'params' => [

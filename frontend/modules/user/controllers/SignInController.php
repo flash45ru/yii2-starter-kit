@@ -150,10 +150,7 @@ class SignInController extends \yii\web\Controller
             if ($user) {
                 if ($model->shouldBeActivated()) {
                     Yii::$app->getSession()->setFlash('alert', [
-                        'body' => Yii::t(
-                            'frontend',
-                            'Your account has been successfully created. Check your email for further instructions.'
-                        ),
+                        'body' => 'Your account has been successfully created. Check your email for further instructions.',
                         'options' => ['class' => 'alert-success']
                     ]);
                 } else {
@@ -192,7 +189,7 @@ class SignInController extends \yii\web\Controller
         $token->delete();
         Yii::$app->getUser()->login($user);
         Yii::$app->getSession()->setFlash('alert', [
-            'body' => Yii::t('frontend', 'Your account has been successfully activated.'),
+            'body' => 'Your account has been successfully activated.',
             'options' => ['class' => 'alert-success']
         ]);
 
@@ -208,14 +205,14 @@ class SignInController extends \yii\web\Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
                 Yii::$app->getSession()->setFlash('alert', [
-                    'body' => Yii::t('frontend', 'Check your email for further instructions.'),
+                    'body' => 'Check your email for further instructions.',
                     'options' => ['class' => 'alert-success']
                 ]);
 
                 return $this->goHome();
             } else {
                 Yii::$app->getSession()->setFlash('alert', [
-                    'body' => Yii::t('frontend', 'Sorry, we are unable to reset password for email provided.'),
+                    'body' => 'Sorry, we are unable to reset password for email provided.',
                     'options' => ['class' => 'alert-danger']
                 ]);
             }
@@ -241,7 +238,7 @@ class SignInController extends \yii\web\Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
             Yii::$app->getSession()->setFlash('alert', [
-                'body' => Yii::t('frontend', 'New password was saved.'),
+                'body' => 'New password was saved.',
                 'options' => ['class' => 'alert-success']
             ]);
             return $this->goHome();
@@ -258,14 +255,14 @@ class SignInController extends \yii\web\Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
                 Yii::$app->getSession()->setFlash('alert', [
-                    'body' => Yii::t('frontend', 'Check your email for further instructions.'),
+                    'body' => 'Check your email for further instructions.',
                     'options' => ['class' => 'alert-success']
                 ]);
 
                 return $this->goHome();
             } else {
                 Yii::$app->getSession()->setFlash('alert', [
-                    'body' => Yii::t('frontend', 'Sorry, we are unable to resend activation link for email provided.'),
+                    'body' => 'Sorry, we are unable to resend activation link for email provided.',
                     'options' => ['class' => 'alert-danger']
                 ]);
             }
@@ -314,7 +311,7 @@ class SignInController extends \yii\web\Controller
                 $sentSuccess = Yii::$app->commandBus->handle(new SendEmailCommand([
                     'view' => 'oauth_welcome',
                     'params' => ['user' => $user, 'password' => $password],
-                    'subject' => Yii::t('frontend', '{app-name} | Your login information', ['app-name' => Yii::$app->name]),
+                    'subject' => Yii::t('frontend', '{app-name} | Информация о пользователе', ['app-name' => Yii::$app->name]),
                     'to' => $user->email
                 ]));
                 if ($sentSuccess) {
@@ -322,7 +319,7 @@ class SignInController extends \yii\web\Controller
                         'alert',
                         [
                             'options' => ['class' => 'alert-success'],
-                            'body' => Yii::t('frontend', 'Welcome to {app-name}. Email with your login information was sent to your email.', [
+                            'body' => Yii::t('frontend', 'Добро пожаловать в {app-name}. E-mail с информацией о пользователе был отправлен на вашу почту.', [
                                 'app-name' => Yii::$app->name
                             ])
                         ]
@@ -336,7 +333,7 @@ class SignInController extends \yii\web\Controller
                         'alert',
                         [
                             'options' => ['class' => 'alert-danger'],
-                            'body' => Yii::t('frontend', 'We already have a user with email {email}', [
+                            'body' => Yii::t('frontend', 'Пользователь с e-mail {email} уже зарегистрирован.', [
                                 'email' => $user->email
                             ])
                         ]
@@ -346,7 +343,7 @@ class SignInController extends \yii\web\Controller
                         'alert',
                         [
                             'options' => ['class' => 'alert-danger'],
-                            'body' => Yii::t('frontend', 'Error while oauth process.')
+                            'body' => 'Error while oauth process.'
                         ]
                     );
                 }

@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 /* @var $model \frontend\modules\user\models\LoginForm */
 
-$this->title = Yii::t('frontend', 'Login');
+$this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php echo $form->field($model, 'password')->passwordInput() ?>
                 <?php echo $form->field($model, 'rememberMe')->checkbox() ?>
                 <div style="color:#999;margin:1em 0">
-                    <?php echo Yii::t('frontend', 'If you forgot your password you can reset it <a href="{link}">here</a>', [
+                    <?php echo Yii::t('frontend', 'Если вы забыли пароль, вы можете сбросить его <a href="{link}">здесь</a>', [
                         'link'=>yii\helpers\Url::to(['sign-in/request-password-reset'])
                     ]) ?>
                     <?php if (Yii::$app->getModule('user')->shouldBeActivated) : ?>
@@ -31,12 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 </div>
                 <div class="form-group">
-                    <?php echo Html::submitButton(Yii::t('frontend', 'Login'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?php echo Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                 </div>
                 <div class="form-group">
-                    <?php echo Html::a(Yii::t('frontend', 'Need an account? Sign up.'), ['signup']) ?>
+                    <?php echo Html::a('Need an account? Sign up.', ['signup']) ?>
                 </div>
-                <h2><?php echo Yii::t('frontend', 'Log in with')  ?>:</h2>
+                <h2><?php echo 'Log in with'  ?>:</h2>
                 <div class="form-group">
                     <?php $authAuthChoice = yii\authclient\widgets\AuthChoice::begin([
                                     'baseAuthUrl' => ['site/auth']

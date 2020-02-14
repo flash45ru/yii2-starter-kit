@@ -46,8 +46,8 @@ class ArticleCategory extends ActiveRecord
     public static function statuses()
     {
         return [
-            self::STATUS_DRAFT => Yii::t('common', 'Draft'),
-            self::STATUS_ACTIVE => Yii::t('common', 'Active'),
+            self::STATUS_DRAFT => 'Draft',
+            self::STATUS_ACTIVE => 'Active',
         ];
     }
 
@@ -86,11 +86,11 @@ class ArticleCategory extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('common', 'ID'),
-            'slug' => Yii::t('common', 'Slug'),
-            'title' => Yii::t('common', 'Title'),
-            'parent_id' => Yii::t('common', 'Parent Category'),
-            'status' => Yii::t('common', 'Active'),
+            'id' => 'ID',
+            'slug' => 'Slug',
+            'title' => 'Title',
+            'parent_id' => 'Parent Category',
+            'status' => 'Active',
         ];
     }
 

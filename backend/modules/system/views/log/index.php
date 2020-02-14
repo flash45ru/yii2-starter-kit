@@ -11,14 +11,14 @@ use yii\web\JsExpression;
  * @var $dataProvider yii\data\ActiveDataProvider
  */
 
-$this->title = Yii::t('backend', 'System Logs');
+$this->title = 'System Logs';
 
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 
 <p>
-    <?php echo Html::a(Yii::t('backend', 'Clear'), false, ['class' => 'btn btn-danger', 'data-method' => 'delete']) ?>
+    <?php echo Html::a('Clear', false, ['class' => 'btn btn-danger', 'data-method' => 'delete']) ?>
 </p>
 
 <?php echo GridView::widget([

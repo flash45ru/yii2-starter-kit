@@ -4,7 +4,7 @@
  * @var $this yii\web\View
  */
 
-$this->title = Yii::t('backend', 'File Manager');
+$this->title = 'File Manager';
 
 $this->params['breadcrumbs'][] = $this->title;
 

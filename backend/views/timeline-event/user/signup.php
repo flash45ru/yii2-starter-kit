@@ -11,11 +11,11 @@
     </span>
 
     <h3 class="timeline-header">
-        <?php echo Yii::t('backend', 'You have new user!') ?>
+        <?php echo 'You have new user!' ?>
     </h3>
 
     <div class="timeline-body">
-        <?php echo Yii::t('backend', 'New user ({identity}) was registered at {created_at}', [
+        <?php echo Yii::t('backend', 'Новый пользователь ({identity}) был зарегистрирован {created_at}', [
             'identity' => $model->data['public_identity'],
             'created_at' => Yii::$app->formatter->asDatetime($model->data['created_at'])
         ]) ?>
@@ -23,7 +23,7 @@
 
     <div class="timeline-footer">
         <?php echo \yii\helpers\Html::a(
-            Yii::t('backend', 'View user'),
+            'View user',
             ['/user/view', 'id' => $model->data['user_id']],
             ['class' => 'btn btn-success btn-sm']
         ) ?>

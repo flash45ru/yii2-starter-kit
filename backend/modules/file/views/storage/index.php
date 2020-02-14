@@ -12,7 +12,7 @@ use yii\web\JsExpression;
  * @var $totalSize    integer
  */
 
-$this->title = Yii::t('backend', 'File Storage Items');
+$this->title = 'File Storage Items';
 
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-xs-12">
             <dl>
                 <dt>
-                    <?php echo Yii::t('backend', 'Used size') ?>:
+                    <?php echo 'Used size' ?>:
                 </dt>
                 <dd>
                     <?php echo Yii::$app->formatter->asSize($totalSize); ?>
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-xs-12">
                 <dl>
                     <dt>
-                        <?php echo Yii::t('backend', 'Count') ?>:
+                        <?php echo 'Count' ?>:
                     </dt>
                     <dd>
                         <?php echo $dataProvider->totalCount ?>

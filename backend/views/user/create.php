@@ -2,10 +2,10 @@
 /* @var $this yii\web\View */
 /* @var $model backend\models\UserForm */
 /* @var $roles yii\rbac\Role[] */
-$this->title = Yii::t('backend', 'Create {modelClass}', [
+$this->title = Yii::t('backend', 'Создание {modelClass}', [
     'modelClass' => 'User',
 ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Users'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-create">

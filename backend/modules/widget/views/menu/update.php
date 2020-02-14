@@ -5,12 +5,12 @@
  * @var $model common\models\WidgetMenu
  */
 
-$this->title = Yii::t('backend', 'Update {modelClass}: ', [
+$this->title = Yii::t('backend', 'Редактирование {modelClass}: ', [
         'modelClass' => 'Widget Menu',
     ]) . ' ' . $model->title;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Widget Menus'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
+$this->params['breadcrumbs'][] = ['label' => 'Widget Menus', 'url' => ['index']];
+$this->params['breadcrumbs'][] = 'Update';
 
 ?>
 

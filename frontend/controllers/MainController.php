@@ -44,10 +44,14 @@ class MainController extends Controller
                 $this->service->create($form);
                 Yii::$app->session->setFlash('success', "Form created successfully.");
             } catch (\Throwable $e) {
+                echo '<pre>';
+                var_dump($e);
+                echo '</pre>';
+                die();
                 Yii::$app->session->setFlash('error', "Form not saved.");
             }
 
-            return $this->redirect(['index']);
+//            return $this->redirect(['index']);
         }
 
         return $this->render('create', [

@@ -40,7 +40,7 @@ class SignupForm extends Model
             ['username', 'required'],
             ['username', 'unique',
                 'targetClass' => '\common\models\User',
-                'message' => Yii::t('frontend', 'This username has already been taken.')
+                'message' => 'This username has already been taken.'
             ],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
@@ -49,7 +49,7 @@ class SignupForm extends Model
             ['email', 'email'],
             ['email', 'unique',
                 'targetClass' => '\common\models\User',
-                'message' => Yii::t('frontend', 'This email address has already been taken.')
+                'message' => 'This email address has already been taken.'
             ],
 
             ['password', 'required'],
@@ -63,9 +63,9 @@ class SignupForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => Yii::t('frontend', 'Username'),
-            'email' => Yii::t('frontend', 'E-mail'),
-            'password' => Yii::t('frontend', 'Password'),
+            'username' => 'Username',
+            'email' => 'E-mail',
+            'password' => 'Password',
         ];
     }
 
@@ -95,7 +95,7 @@ class SignupForm extends Model
                     Time::SECONDS_IN_A_DAY
                 );
                 Yii::$app->commandBus->handle(new SendEmailCommand([
-                    'subject' => Yii::t('frontend', 'Activation email'),
+                    'subject' => 'Activation email',
                     'view' => 'activation',
                     'to' => $this->email,
                     'params' => [

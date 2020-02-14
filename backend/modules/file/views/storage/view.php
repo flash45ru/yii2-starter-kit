@@ -10,16 +10,16 @@ use yii\widgets\DetailView;
 
 $this->title = $model->name;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'File Storage Items'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'File Storage Items', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 
 <p>
-    <?php echo Html::a(Yii::t('backend', 'Delete'), ['delete', 'id' => $model->id], [
+    <?php echo Html::a('Delete', ['delete', 'id' => $model->id], [
         'class' => 'btn btn-danger',
         'data' => [
-            'confirm' => Yii::t('backend', 'Are you sure you want to delete this item?'),
+            'confirm' => 'Are you sure you want to delete this item?',
             'method' => 'post',
         ],
     ]) ?>

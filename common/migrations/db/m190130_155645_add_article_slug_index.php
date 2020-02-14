@@ -12,8 +12,8 @@ class m190130_155645_add_article_slug_index extends Migration
      */
     public function safeUp()
     {
-        $this->alterColumn('{{%article}}', 'slug', $this->string(255)->notNull());
-        $this->alterColumn('{{%article_category}}', 'slug', $this->string(255)->notNull());
+        $this->alterColumn('{{%article}}', 'slug', $this->string(255));
+        $this->alterColumn('{{%article_category}}', 'slug', $this->string(255));
         $this->createIndex('idx_article_slug', '{{%article}}', 'slug', true);
         $this->createIndex('idx_article_category_slug', '{{%article_category}}', 'slug', true);
     }
@@ -25,7 +25,7 @@ class m190130_155645_add_article_slug_index extends Migration
     {
         $this->dropIndex('idx_article_slug', '{{%article}}');
         $this->dropIndex('idx_article_category_slug', '{{%article_category}}');
-        $this->alterColumn('{{%article}}', 'slug', $this->string(1024)->notNull());
-        $this->alterColumn('{{%article_category}}', 'slug', $this->string(1024)->notNull());
+        $this->alterColumn('{{%article}}', 'slug', $this->string(1024));
+        $this->alterColumn('{{%article_category}}', 'slug', $this->string(1024));
     }
 }

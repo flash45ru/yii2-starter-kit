@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 /* @var $model \frontend\modules\user\models\SignupForm */
 
-$this->title = Yii::t('frontend', 'Signup');
+$this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup">
@@ -19,9 +19,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php echo $form->field($model, 'email') ?>
                 <?php echo $form->field($model, 'password')->passwordInput() ?>
                 <div class="form-group">
-                    <?php echo Html::submitButton(Yii::t('frontend', 'Signup'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?php echo Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
-                <h2><?php echo Yii::t('frontend', 'Sign up with')  ?>:</h2>
+                <h2><?php echo 'Sign up with'  ?>:</h2>
                 <div class="form-group">
                     <?php $authAuthChoice = yii\authclient\widgets\AuthChoice::begin([
                                     'baseAuthUrl' => ['site/auth']

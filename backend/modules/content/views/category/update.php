@@ -6,12 +6,12 @@
  * @var $categories common\models\ArticleCategory[]
  */
 
-$this->title = Yii::t('backend', 'Update {modelClass}: ', [
+$this->title = Yii::t('backend', 'Редактирование {modelClass}: ', [
         'modelClass' => 'Article Category',
     ]) . ' ' . $model->title;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Article Categories'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
+$this->params['breadcrumbs'][] = ['label' => 'Article Categories', 'url' => ['index']];
+$this->params['breadcrumbs'][] = 'Update';
 
 ?>
 

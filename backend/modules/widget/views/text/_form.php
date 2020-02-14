@@ -30,7 +30,7 @@ use yii\helpers\Html;
 
 <div class="form-group">
     <?php echo Html::submitButton(
-        $model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'),
+        $model->isNewRecord ? 'Create' : 'Update',
         ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
     ) ?>
 </div>

@@ -54,7 +54,7 @@ class PasswordResetRequestForm extends Model
             if ($user->save()) {
                 return Yii::$app->commandBus->handle(new SendEmailCommand([
                     'to' => $this->email,
-                    'subject' => Yii::t('frontend', 'Password reset for {name}', ['name' => Yii::$app->name]),
+                    'subject' => Yii::t('frontend', 'Сброс пароля для {name}', ['name' => Yii::$app->name]),
                     'view' => 'passwordResetToken',
                     'params' => [
                         'user' => $user,
@@ -73,7 +73,7 @@ class PasswordResetRequestForm extends Model
     public function attributeLabels()
     {
         return [
-            'email' => Yii::t('frontend', 'E-mail')
+            'email' => 'E-mail'
         ];
     }
 }

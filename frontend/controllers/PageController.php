@@ -19,7 +19,7 @@ class PageController extends Controller
     {
         $model = Page::find()->where(['slug' => $slug, 'status' => Page::STATUS_PUBLISHED])->one();
         if (!$model) {
-            throw new NotFoundHttpException(Yii::t('frontend', 'Page not found'));
+            throw new NotFoundHttpException('Page not found');
         }
 
         $viewFile = $model->view ?: 'view';

@@ -5,12 +5,12 @@
  * @var $model common\models\WidgetText
  */
 
-$this->title = Yii::t('backend', 'Update {modelClass}: ', [
+$this->title = Yii::t('backend', 'Редактирование {modelClass}: ', [
         'modelClass' => 'Text Block',
     ]) . ' ' . $model->title;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Text Blocks'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
+$this->params['breadcrumbs'][] = ['label' => 'Text Blocks', 'url' => ['index']];
+$this->params['breadcrumbs'][] = 'Update';
 
 ?>
 

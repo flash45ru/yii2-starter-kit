@@ -17,7 +17,7 @@ class JsonValidator extends Validator
     {
         parent::init();
         if ($this->message === null) {
-            $this->message = Yii::t('common', '"{attribute}" must be a valid JSON');
+            $this->message = '"{attribute}" must be a valid JSON';
         }
     }
 

@@ -124,13 +124,13 @@ class UserToken extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('common', 'ID'),
-            'user_id' => Yii::t('common', 'User ID'),
-            'type' => Yii::t('common', 'Type'),
-            'token' => Yii::t('common', 'Token'),
-            'expire_at' => Yii::t('common', 'Expire At'),
-            'created_at' => Yii::t('common', 'Created At'),
-            'updated_at' => Yii::t('common', 'Updated At'),
+            'id' => 'ID',
+            'user_id' => 'User ID',
+            'type' => 'Type',
+            'token' => 'Token',
+            'expire_at' => 'Expire At',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 
