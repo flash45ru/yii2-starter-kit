@@ -89,11 +89,7 @@ class FormRepository
 
             if ($form->options->attributes['car_id'] === null) {
                 $options_model = new Options($form->options->attributes);
-                echo '<pre>';
-                var_dump($form->advent->attributes);
-                echo '</pre>';
-                die();
-                $options_model->car_id = self::getAdventIdFromCar($form->advent->attributes['id']);
+                $options_model->car_id = self::getAdventIdFromCar($this->_advent_model->id);
                 if (!$options_model->save(false)) {
                     throw new ErrorException('Произошла ошибка при сохранении данных в "Options"');
                 }
@@ -141,7 +137,6 @@ class FormRepository
     {
         if ($this->_advent_model === null) {
             $this->_advent_model = Advent::findOne($id);
-//            $this->_advent_model->scenario = AdventForm::SCENARIO_UPDATE;
         }
 
         return $this->_advent_model;

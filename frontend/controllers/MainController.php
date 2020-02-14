@@ -72,10 +72,6 @@ class MainController extends Controller
 
         if ($form->load(\Yii::$app->request->post()) && $form->validate()) {
             try {
-                echo '<pre>';
-                var_dump($form->advent->attributes);
-                echo '</pre>';
-                die();
                 $this->service->update($form);
                 Yii::$app->session->setFlash('success', "Form updated successfully.");
             } catch (Exception $e) {
